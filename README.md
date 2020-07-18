@@ -7,10 +7,16 @@ pip install Colorama //for highlighting results
 
 execute GeometryCalc.py
 
+
 v. 1.0.0
+
 Basic geometry functions added
+
 Language German
 
+
 v. 1.0.1
+
 Added Menu Color
+
 Improved Readability on Rectangle Results
