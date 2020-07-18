@@ -24,10 +24,13 @@ def quadrat_diagonale():
     print(Style.RESET_ALL)
 
 def rechteck_fläche():
-    seite1 = input("Erste Seitenlänge: ")
-    seite2 = input("Zweite Seitenlänge: ")
+    seite1 = input("Erste Seitenlänge (a): ")
+    seite2 = input("Zweite Seitenlänge (b): ")
     fläche_rechteck_gesamt = float(seite1) * float(seite2)
     print("Seitenlänge 1 x Seitenlänge 2 =")
+    print(" ____________")
+    print(" |", round(float(fläche_rechteck_gesamt)),     "FE     |")
+    print(" ------------ ")
     print(Fore.GREEN + str(fläche_rechteck_gesamt), " Flächeneinheiten")
     print(Style.RESET_ALL)
 
@@ -36,6 +39,11 @@ def rechteck_umfang():
     seite2 = input("Zweite Seitenlänge: ")
     umfang_rechteck_gesamt = float(seite1) * 2 + float(seite2) * 2
     print("(Seitenlänge 1 x 2) + (Seitenlänge 2 x 2) =")
+    print("Lange Seite: ")
+    print("______" , max(float(seite1), float(seite2)), " x 2 = ", max(float(seite1), float(seite2)) * 2, " LE")
+    print("Kurze Seite: ")
+    print("|     ")
+    print("|     " , min(float(seite1), float(seite2)), " x 2 = ", min(float(seite1), float(seite2)) * 2, " LE")
     print(Fore.GREEN + str(umfang_rechteck_gesamt), " Längeneinheiten")
     print(Style.RESET_ALL)
 
@@ -120,11 +128,12 @@ def sub_menu_kreis():
         exit()
 
 def menu():
-    print("Hauptmenü:")
+    print(Fore.BLUE + "Hauptmenü:")
     print("1. Quadrat")
     print("2. Rechteck")
     print("3. Kreis")
     print("e. Beenden")
+    print(Style.RESET_ALL)
 
     userselection = input("Programmauswahl: ")
     if userselection == "1":
