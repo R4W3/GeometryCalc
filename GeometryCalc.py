@@ -69,6 +69,22 @@ def kreis_umfang():
     print(Fore.GREEN + str(kreis_umfang_gesamt), " Längeneinheiten")
     print(Style.RESET_ALL)
 
+def dreieck_fläche():
+    print("    /|\     ")
+    print("   / | \    ")
+    print("  /  |h \   ")
+    print(" /   |   \  ")
+    print("/____|____\ ")
+    print("   a        ")
+    seite = input("Eine Seite: ")
+    höhe = input("Die Höhe der Seite: ")
+    dreieck_fläche_ges = float(seite) * float(höhe) / 2
+    print("Seite a x Höhe h->a")
+    print(Fore.GREEN + str(dreieck_fläche_ges), " Flächeneinheiten")
+    print(Style.RESET_ALL)
+
+
+
 def sub_menu_quadrat():
     print("\n")
     print("Menü zur Quadratberechnung")
@@ -129,6 +145,20 @@ def sub_menu_kreis():
         menu()
     if userselection == "e":
         exit()
+def sub_menu_dreieck():
+    print("\n")
+    print("Menü zur Dreiecksberechnung")
+    print("1. Dreieck Fläche:")
+    print("m. Hauptmenü")
+    print("e. Beenden")
+    userselection = input("Programmauswahl: ")
+    if userselection == "1":
+        dreieck_fläche()
+        sub_menu_dreieck()
+    if userselection == "m":
+        menu()
+    if userselection == "e":
+        exit()
 
 def menu():
     print("\n")
@@ -136,6 +166,7 @@ def menu():
     print("1. Quadrat")
     print("2. Rechteck")
     print("3. Kreis")
+    print("4. Dreieck")
     print("e. Beenden")
     print(Style.RESET_ALL)
 
@@ -146,6 +177,8 @@ def menu():
         sub_menu_rechteck()
     if userselection == "3":
         sub_menu_kreis()
+    if userselection == "4":
+        sub_menu_dreieck()
     if userselection == "e":
         exit()
 
