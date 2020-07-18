@@ -2,18 +2,21 @@ import math
 from colorama import init
 from colorama import Fore, Back, Style
 init()
+words = []
+en = ["GeometryCalc with formulas", "Made by Rene Ehlers", "Sidelength (no unit): ", "Sidelength", " Squareunits"]
+de = ["GeometryCalc mit Formelanzeige", "von Rene Ehlers", "Seitenlänge (ohne Einheit): ", "Seitenlänge", " Flächeneinheiten" ]
 
 def info():
-    print(Fore.GREEN + "Geometrie Rechner mit Formelanzeige")
-    print(Fore.GREEN + "Made by Rene Ehlers")
+    print(Fore.GREEN + words[0])
+    print(Fore.GREEN + words[1])
     print(Fore.GREEN + "Published under: GNU GPLv3")
     print(Style.RESET_ALL)
 
 def quadrat_fläche():
-    quadrat_seitenlänge = input("Seitenlänge (ohne Einheit): ")
+    quadrat_seitenlänge = input(words[2])
     quadrat_fläche_calc = float(quadrat_seitenlänge) * float(quadrat_seitenlänge)
-    print("Seitenlänge x Seitenlänge =")
-    print(Fore.GREEN + str(quadrat_fläche_calc), " Flächeneinheiten")
+    print(words[3], "x", words[3], " = ")
+    print(Fore.GREEN + str(quadrat_fläche_calc), words[4])
     print(Style.RESET_ALL)
 
 def quadrat_diagonale():
@@ -181,6 +184,17 @@ def menu():
         sub_menu_dreieck()
     if userselection == "e":
         exit()
+def lang():
+    print("Choose a language from below options")
+    print("1. English")
+    print("2. German")
+    lan = input("Enter a number: ")
+    if lan == "1":
+        words.extend(en)
+    if lan == "2":
+        words.extend(de)
 
+
+lang()
 info()
 menu()
