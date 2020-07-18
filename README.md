@@ -27,3 +27,13 @@ v. 1.0.2
 Changed Menu Color -> Terminal readability was bad
 
 Added Spaces before Menu to improve readability
+
+
+v. 1.0.3
+
+Added triangle area calculation option
+
+
+v. 1.0.4
+
+Added english language setting (translation WIP)
