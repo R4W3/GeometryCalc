@@ -2,9 +2,10 @@ import math
 from colorama import init
 from colorama import Fore, Back, Style
 init()
+
 words = []
-en = ["GeometryCalc with formulas", "Made by Rene Ehlers", "Sidelength (no unit): ", "Sidelength", " Squareunits"]
-de = ["GeometryCalc mit Formelanzeige", "von Rene Ehlers", "Seitenlänge (ohne Einheit): ", "Seitenlänge", " Flächeneinheiten" ]
+en = ["GeometryCalc with formulas", "Made by Rene Ehlers", "Sidelength (no unit): ", "Sidelength", " Squareunits", "Squareroot(2) =", " Lengthunits", "First sidelength (a): ", "Second sidelength (b): ", "SU", "a ", "b ", "Long Side: ", "Short Side: ", "LU", "Main Menu", 16, "Square", "Rectangle", "Circle", "Triangle", "Exit"]
+de = ["GeometryCalc mit Formelanzeige", "von Rene Ehlers", "Seitenlänge (ohne Einheit): ", "Seitenlänge", " Flächeneinheiten", "Wurzel (2) =", " Längeneinheiten", "Erste Seitenlänge (a): ", "Zweite Seitenlänge (b): ", "FE", "a ", "b ", "Lange Seite: ", "Kurze Seite: ", "LE", "Hauptmenü", 16, "Quadrat", "Rechteck", "Kreis", "Dreieck", "Beenden"]
 
 def info():
     print(Fore.GREEN + words[0])
@@ -20,56 +21,56 @@ def quadrat_fläche():
     print(Style.RESET_ALL)
 
 def quadrat_diagonale():
-    quadrat_seitenlänge = input("Seitenlänge (ohne Einheit): ")
+    quadrat_seitenlänge = input(words[2])
     quadrat_diagonale_calc = float(quadrat_seitenlänge) * math.sqrt(2)
-    print("Seitenlänge x Wurzel(2) =")
-    print(Fore.GREEN + str(quadrat_diagonale_calc), " Längeneinheiten")
+    print(words[3], "x", words[5])
+    print(Fore.GREEN + str(quadrat_diagonale_calc), words[6])
     print(Style.RESET_ALL)
 
 def rechteck_fläche():
-    seite1 = input("Erste Seitenlänge (a): ")
-    seite2 = input("Zweite Seitenlänge (b): ")
+    seite1 = input(words[7])
+    seite2 = input(words[8])
     fläche_rechteck_gesamt = float(seite1) * float(seite2)
-    print("Seitenlänge 1 x Seitenlänge 2 =")
+    print(words[7], "x", words[8], " = ")
     print(" ____________")
-    print(" |", round(float(fläche_rechteck_gesamt)),     "FE     |")
+    print(" |", round(float(fläche_rechteck_gesamt)), words[9],    "     |")
     print(" ------------ ")
-    print(Fore.GREEN + str(fläche_rechteck_gesamt), " Flächeneinheiten")
+    print(Fore.GREEN + str(fläche_rechteck_gesamt), words[5])
     print(Style.RESET_ALL)
 
 def rechteck_umfang():
-    seite1 = input("Erste Seitenlänge: ")
-    seite2 = input("Zweite Seitenlänge: ")
+    seite1 = input(words[7])
+    seite2 = input(words[8])
     umfang_rechteck_gesamt = float(seite1) * 2 + float(seite2) * 2
-    print("(Seitenlänge 1 x 2) + (Seitenlänge 2 x 2) =")
-    print("Lange Seite: ")
-    print("______" , max(float(seite1), float(seite2)), " x 2 = ", max(float(seite1), float(seite2)) * 2, " LE")
-    print("Kurze Seite: ")
+    print("(",words[10], "x 2) + (", words[11], "x 2) =")
+    print(words[12])
+    print("______" , max(float(seite1), float(seite2)), " x 2 = ", max(float(seite1), float(seite2)) * 2, words[14])
+    print(words[13])
     print("|     ")
-    print("|     " , min(float(seite1), float(seite2)), " x 2 = ", min(float(seite1), float(seite2)) * 2, " LE")
-    print(Fore.GREEN + str(umfang_rechteck_gesamt), " Längeneinheiten")
+    print("|     " , min(float(seite1), float(seite2)), " x 2 = ", min(float(seite1), float(seite2)) * 2, words[14])
+    print(Fore.GREEN + str(umfang_rechteck_gesamt), words[6])
     print(Style.RESET_ALL)
 
 def rechteck_diagonale():
-    seite1 = input("Erste Seitenlänge: ")
-    seite2 = input("Zweite Seitenlänge: ")
+    seite1 = input(words[7])
+    seite2 = input(words[8])
     diagonale_rechteck_gesamt = math.sqrt(float(seite1) ** 2 + float(seite2) ** 2)
     print("Wurzel aus -- > (Seitenlänge 1 ^ 2) + (Seitenlänge 2 ^ 2) =")
-    print(Fore.GREEN + str(diagonale_rechteck_gesamt), " Längeneinheiten")
+    print(Fore.GREEN + str(diagonale_rechteck_gesamt), words[6])
     print(Style.RESET_ALL)
 
 def kreis_fläche():
     radius = input("Radius: ")
     kreis_fläche_gesamt = math.pi * float(radius) ** 2
     print("Pi x Radius ^ 2 =")
-    print(Fore.GREEN + str(kreis_fläche_gesamt), " Flächeneinheiten")
+    print(Fore.GREEN + str(kreis_fläche_gesamt), words[4])
     print(Style.RESET_ALL)
 
 def kreis_umfang():
     radius = input("Radius: ")
     kreis_umfang_gesamt = 2 * math.pi * float(radius)
     print("2 x Pi x Radius =")
-    print(Fore.GREEN + str(kreis_umfang_gesamt), " Längeneinheiten")
+    print(Fore.GREEN + str(kreis_umfang_gesamt), words[6])
     print(Style.RESET_ALL)
 
 def dreieck_fläche():
@@ -83,7 +84,7 @@ def dreieck_fläche():
     höhe = input("Die Höhe der Seite: ")
     dreieck_fläche_ges = float(seite) * float(höhe) / 2
     print("Seite a x Höhe h->a")
-    print(Fore.GREEN + str(dreieck_fläche_ges), " Flächeneinheiten")
+    print(Fore.GREEN + str(dreieck_fläche_ges), words[4])
     print(Style.RESET_ALL)
 
 
@@ -165,12 +166,12 @@ def sub_menu_dreieck():
 
 def menu():
     print("\n")
-    print(Fore.CYAN + "Hauptmenü:")
-    print("1. Quadrat")
-    print("2. Rechteck")
-    print("3. Kreis")
-    print("4. Dreieck")
-    print("e. Beenden")
+    print(Fore.CYAN + words[15])
+    print("1. ",words[17])
+    print("2. ",words[18])
+    print("3. ",words[19])
+    print("4. ",words[20])
+    print("e. ",words[21])
     print(Style.RESET_ALL)
 
     userselection = input("Programmauswahl: ")
@@ -193,6 +194,12 @@ def lang():
         words.extend(en)
     if lan == "2":
         words.extend(de)
+    if lan != "1" and lan != "2":
+        print("\n")
+        print(Fore.RED + "Invalid Language!")
+        print(Style.RESET_ALL)
+        print("Choose a valid Language by using the numbers (eg: 1) and press enter!")
+        lang()
 
 
 lang()
