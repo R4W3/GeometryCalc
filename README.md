@@ -37,3 +37,9 @@ Added triangle area calculation option
 v. 1.0.4
 
 Added english language setting (translation WIP)
+
+
+v.1.0.5
+
+Added various translations
+Fixed exit upon wrong input in language chooser
