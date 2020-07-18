@@ -70,6 +70,7 @@ def kreis_umfang():
     print(Style.RESET_ALL)
 
 def sub_menu_quadrat():
+    print("\n")
     print("Menü zur Quadratberechnung")
     print("1. Quadrat Fläche:")
     print("2. Quadrat Diagonale:")
@@ -88,6 +89,7 @@ def sub_menu_quadrat():
         exit()
 
 def sub_menu_rechteck():
+    print("\n")
     print("Menü zur Rechteckberechnung")
     print("1. Rechteck Fläche:")
     print("2. Rechteck Umfang:")
@@ -110,6 +112,7 @@ def sub_menu_rechteck():
         exit()
 
 def sub_menu_kreis():
+    print("\n")
     print("Menü zur Kreisberechnung")
     print("1. Kreis Fläche:")
     print("2. Kreis Umfang:")
@@ -128,7 +131,8 @@ def sub_menu_kreis():
         exit()
 
 def menu():
-    print(Fore.BLUE + "Hauptmenü:")
+    print("\n")
+    print(Fore.CYAN + "Hauptmenü:")
     print("1. Quadrat")
     print("2. Rechteck")
     print("3. Kreis")
