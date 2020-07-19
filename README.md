@@ -42,9 +42,15 @@ Added english language setting (translation WIP)
 v.1.0.5
 
 Added various translations
+
 Fixed exit upon wrong input in language chooser
 
 
 v. 1.0.6
 
 Finished english translation
+
+
+v. 1.1.0
+
+Fixed various issues with the menu
