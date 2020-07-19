@@ -170,6 +170,25 @@ def settings():
     lang()
     print(Style.RESET_ALL)
 
+def menu_sel():
+    userselection = input(words[23])
+    if userselection == "1":
+        sub_menu_quadrat()
+    elif userselection == "2":
+        sub_menu_rechteck()
+    elif userselection == "3":
+        sub_menu_kreis()
+    elif userselection == "4":
+        sub_menu_dreieck()
+    elif userselection == "o":
+        settings()
+    elif userselection == "e":
+        exit()
+    else:
+        print(Fore.LIGHTRED_EX +"Invalid!")
+        print(Style.RESET_ALL)
+        menu_sel()
+
 def menu():
     print("\n")
     print(Fore.CYAN + words[15])
@@ -180,20 +199,10 @@ def menu():
     print("o. ",words[22])
     print("e. ",words[21])
     print(Style.RESET_ALL)
+    menu_sel()
 
-    userselection = input(words[23])
-    if userselection == "1":
-        sub_menu_quadrat()
-    if userselection == "2":
-        sub_menu_rechteck()
-    if userselection == "3":
-        sub_menu_kreis()
-    if userselection == "4":
-        sub_menu_dreieck()
-    if userselection == "o":
-        settings()
-    if userselection == "e":
-        exit()
+
+
 def lang():
     print("Choose a language from below options")
     print("1. English")
