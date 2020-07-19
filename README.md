@@ -43,3 +43,8 @@ v.1.0.5
 
 Added various translations
 Fixed exit upon wrong input in language chooser
+
+
+v. 1.0.6
+
+Finished english translation
